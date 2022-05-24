@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 //ngetes aja
     private lateinit var binding: ActivityMainBinding
 //tambah 1
+    //tambah 2
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
