@@ -6,10 +6,6 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
 
-    <item
-        android:id="@+id/navigation_camera"
-        android:icon="@drawable/ic_photo_camera_white"
-        android:title="@string/camera" />
 
     <item
         android:id="@+id/navigation_article"

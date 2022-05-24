@@ -11,11 +11,7 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
-    <fragment
-        android:id="@+id/navigation_camera"
-        android:name="com.bangkit2022.spicedetectobject.ui.camera.CameraFragment"
-        android:label="@string/camera"
-        tools:layout="@layout/fragment_camera"/>
+
 
     <fragment
         android:id="@+id/navigation_article"

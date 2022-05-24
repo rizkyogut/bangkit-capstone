@@ -10,14 +10,16 @@ import androidx.navigation.ui.setupWithNavController
 import com.bangkit2022.spicedetectobject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-//ngetes aja
     private lateinit var binding: ActivityMainBinding
-//tambah 1 + 3
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
 
         val navView: BottomNavigationView = binding.navView
 
@@ -25,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.navigation_home, R.id.navigation_camera, R.id.navigation_article))
+            R.id.navigation_home,  R.id.navigation_article))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
