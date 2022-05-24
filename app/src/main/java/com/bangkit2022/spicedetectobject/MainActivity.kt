@@ -10,7 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.bangkit2022.spicedetectobject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
+//ngetes aja
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
