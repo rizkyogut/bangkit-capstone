@@ -12,8 +12,9 @@ import com.bangkit2022.spicedetectobject.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 //ngetes aja
     private lateinit var binding: ActivityMainBinding
-//tambah 1
+//tambah 1 jijijij
     //tambah 2
+    //tambah 3
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
