@@ -25,18 +25,19 @@
         android:contentDescription="@string/preview_image" />
 
 
+
     <Button
         android:id="@+id/cameraButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="544dp"
         android:backgroundTint="@color/green"
 
         android:text="@string/camera"
         app:layout_constraintBottom_toTopOf="@+id/uploadButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="30dp"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -57,21 +58,12 @@
         android:layout_marginStart="64dp"
         android:layout_marginEnd="64dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/upload"
+        android:text="@string/detail"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:backgroundTint="@color/green"/>
 
-    <ProgressBar
-        android:id="@+id/pbUploadStory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone"/>
 
 
 

@@ -95,77 +95,7 @@ class MainCameraActivity : AppCompatActivity() {
     }
 
 
-//    private fun uploadImage() {
-//        if (getFile != null) {
-//            val file = reduceFileImage(getFile as File)
-//
-//            showLoading(true)
-//            val description = binding.addStoryDescription.text.toString()
-//                .toRequestBody("text/plain".toMediaType())
-//            val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
-//            val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
-//                "photo",
-//                file.name,
-//                requestImageFile
-//            )
-//            showLoading(true)
-//            val token = runBlocking { tesPref.getToken() }
-//            val bearerToken = "Bearer $token"
-//            val service =
-//                ApiConfig.getApiService().postNewStory(bearerToken, imageMultipart, description)
-//            service.enqueue(object : Callback<NewStoryResponse> {
-//                override fun onResponse(
-//                    call: Call<NewStoryResponse>,
-//                    response: Response<NewStoryResponse>
-//                ) {
-//                    showLoading(false)
-//                    if (response.isSuccessful) {
-//                        val responseBody = response.body()
-//                        if (responseBody != null && !responseBody.error) {
-//                            Toast.makeText(
-//                                this@MainCameraActivity,
-//                                responseBody.message,
-//                                Toast.LENGTH_SHORT
-//                            ).show()
-//                            startActivity(Intent(this@MainCameraActivity, MainActivity::class.java))
-//                            finish()
-//
-//                        }
-//                    } else {
-//                        Toast.makeText(
-//                            this@MainCameraActivity,
-//                            response.message(),
-//                            Toast.LENGTH_SHORT
-//                        ).show()
-//                    }
-//                }
-//
-//                override fun onFailure(call: Call<NewStoryResponse>, t: Throwable) {
-//                    showLoading(false)
-//                    Toast.makeText(
-//                        this@MainCameraActivity,
-//                        "Gagal instance Retrofit",
-//                        Toast.LENGTH_SHORT
-//                    ).show()
-//                }
-//            })
-//
-//        } else {
-//            Toast.makeText(
-//                this@MainCameraActivity,
-//                "Silakan masukkan berkas gambar terlebih dahulu.",
-//                Toast.LENGTH_SHORT
-//            ).show()
-//        }
-//    }
 
-//    private fun showLoading(isLoading: Boolean) {
-//        if (isLoading) {
-//            binding.pbUploadStory.visibility = View.VISIBLE
-//        } else {
-//            binding.pbUploadStory.visibility = View.GONE
-//        }
-//    }
 
 
     private val launcherIntentCamera = registerForActivityResult(

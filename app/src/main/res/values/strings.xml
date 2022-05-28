@@ -12,5 +12,6 @@
     <string name="take_photo">takePhoto</string>
     <string name="preview_image">previewImage</string>
     <string name="gallery">gallery</string>
-    <string name="upload">upload</string>
+    <string name="detail">detail</string>
+    <string name="image_user">imageUser</string>
 </resources>
