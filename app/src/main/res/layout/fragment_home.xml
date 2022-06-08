@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListSpice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:listitem="@layout/item_spice" />
     <TextView
         android:id="@+id/text_home"
         android:layout_width="match_parent"
@@ -35,5 +46,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.899"
         app:tint="@color/white" />
+
+    <ProgressBar
+        android:id="@+id/pb_spices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rvListSpice" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
