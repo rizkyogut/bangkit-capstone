@@ -1,130 +1,163 @@
 package com.bangkit2022.spicedetectobject.ui.camera
 
 import android.Manifest
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
+import android.view.View
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.bangkit2022.spicedetectobject.databinding.ActivityMainCameraBinding
+import com.bangkit2022.spicedetectobject.ml.SpicesV1
+import org.tensorflow.lite.support.image.TensorImage
 import java.io.File
 
-class MainCameraActivity : AppCompatActivity() {
-    private var getFile: File? = null
+class MainCameraActivity : AppCompatActivity(), View.OnClickListener {
+    private var _binding: ActivityMainCameraBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var imageView: ImageView
+    private lateinit var button: Button
+    private lateinit var tvOutput: TextView
+    private val GALLERY_REQUEST_CODE = 123
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        _binding = ActivityMainCameraBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    private lateinit var binding: ActivityMainCameraBinding
-    private lateinit var currentPhotoPath: String
-
-    companion object {
-        const val CAMERA_X_RESULT = 200
-        private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
-        private const val REQUEST_CODE_PERMISSIONS = 10
+        setupView()
     }
 
+    private fun setupView() {
+        button = binding.btnCaptureImage
+        tvOutput = binding.tvOutput
+        imageView = binding.imageView
+
+        with(binding) {
+            btnCaptureImage.setOnClickListener(this@MainCameraActivity)
+            btnLoadImage.setOnClickListener(this@MainCameraActivity)
+            tvOutput.setOnClickListener(this@MainCameraActivity)
+        }
+    }
+
+    override fun onClick(v: View) {
+        when (v) {
+            binding.btnCaptureImage -> startCamera()
+            binding.btnLoadImage -> startGallery()
+            binding.tvOutput -> startResultML()
+        }
+    }
+
+    private fun startCamera() {
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA)
+            == PackageManager.PERMISSION_GRANTED
+        ) {
+            takePicturePreview.launch(null)
+        } else {
+            requestPermission.launch(android.Manifest.permission.CAMERA)
+        }
+    }
+
+    private val requestPermission =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+            if (granted) {
+                takePicturePreview.launch(null)
+            } else {
+                Toast.makeText(this, "Permission Denied !! Try again", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+    // launch camera and take picture
+    private val takePicturePreview =
+        registerForActivityResult(ActivityResultContracts.TakePicturePreview()) { bitmap ->
+            if (bitmap != null) {
+                imageView.setImageBitmap(bitmap)
+                outputGenerator(bitmap)
+            }
+        }
 
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == REQUEST_CODE_PERMISSIONS) {
-            if (!allPermissionsGranted()) {
-                Toast.makeText(
-                    this,
-                    "Tidak mendapatkan permission.",
-                    Toast.LENGTH_SHORT
-                ).show()
-                finish()
+    private fun startGallery() {
+        if (ContextCompat.checkSelfPermission(this,
+                android.Manifest.permission.READ_EXTERNAL_STORAGE)
+            == PackageManager.PERMISSION_GRANTED
+        ) {
+            val intent =
+                Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            intent.type = "image/*"
+            val mimeTypes = arrayOf("image/jpeg", "image/png", "image/jpg")
+            intent.putExtra(Intent.EXTRA_MIME_TYPES, mimeTypes)
+            intent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+            onresult.launch(intent)
+        } else {
+            requestPermission.launch(android.Manifest.permission.READ_EXTERNAL_STORAGE)
+        }
+    }
+
+    //to get image from gallery
+    private val onresult =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            Log.i("TAG", "This is the result: ${result.data} ${result.resultCode}")
+            onResultReceived(GALLERY_REQUEST_CODE, result)
+        }
+
+    private fun onResultReceived(requestCode: Int, result: ActivityResult?) {
+        when (requestCode) {
+            GALLERY_REQUEST_CODE -> {
+                if (result?.resultCode == Activity.RESULT_OK) {
+                    result.data?.data?.let { uri ->
+                        Log.i("TAG", "onResultReceived: $uri")
+                        val bitmap =
+                            BitmapFactory.decodeStream(contentResolver.openInputStream(uri))
+                        imageView.setImageBitmap(bitmap)
+                        outputGenerator(bitmap)
+                    }
+                } else {
+                    Log.e("TAG", "onActivityResult: error in selecting image")
+                }
             }
         }
     }
 
-    private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
-        ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
+    private fun outputGenerator(bitmap: Bitmap) {
+        //declearing tensor flow lite model variable
+        val spiceModel = SpicesV1.newInstance(this)
+
+        // converting bitmap into tensor flow image
+        val newBitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true)
+        val tfimage = TensorImage.fromBitmap(newBitmap)
+
+        //process the image using trained model and sort it in descending order
+        val outputs = spiceModel.process(tfimage)
+            .probabilityAsCategoryList.apply {
+                sortByDescending { it.score }
+            }
+
+        //getting result having high probability
+        val highProbabilityOutput = outputs[0]
+
+        //setting ouput text
+        binding.tvOutput.text = highProbabilityOutput.label
+        Log.i("TAG", "outputGenerator: $highProbabilityOutput")
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityMainCameraBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        if (!allPermissionsGranted()) {
-            ActivityCompat.requestPermissions(
-                this,
-                REQUIRED_PERMISSIONS,
-                REQUEST_CODE_PERMISSIONS
-            )
-        }
-
-        binding.detailButton.setOnClickListener{
-        startActivity(Intent(this@MainCameraActivity, DetailActivityResult::class.java ))
-        }
-
-        binding.cameraButton.setOnClickListener { startTakePhoto() }
-        binding.galleryButton.setOnClickListener { startGallery() }
-//        binding.uploadButton.setOnClickListener { uploadImage() }
+    private fun startResultML() {
+        val intent = Intent(Intent.ACTION_VIEW,
+            Uri.parse("https://www.google.com/search?q=Rekomendasi+Makanan+Menggunakan+Bumbu+${binding.tvOutput.text}"))
+        startActivity(intent)
     }
-
-
-
-    private fun startTakePhoto() {
-        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        intent.resolveActivity(packageManager)
-        createCustomTempFile(application).also {
-            val photoURI: Uri = FileProvider.getUriForFile(
-                this@MainCameraActivity,
-                "com.bangkit2022.spicedetectobject",
-                it
-            )
-            currentPhotoPath = it.absolutePath
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-            launcherIntentCamera.launch(intent)
-        }
-    }
-
-    private fun startGallery() {
-        val intent = Intent()
-        intent.action = Intent.ACTION_GET_CONTENT
-        intent.type = "image/*"
-        val chooser = Intent.createChooser(intent, "Choose a Picture")
-        launcherIntentGallery.launch(chooser)
-    }
-
-
-
-
-
-    private val launcherIntentCamera = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) {
-        if (it.resultCode == RESULT_OK) {
-            val myFile = File(currentPhotoPath)
-            getFile = myFile
-            val result = BitmapFactory.decodeFile(myFile.path)
-
-            binding.previewImage.setImageBitmap(result)
-        }
-    }
-
-    private val launcherIntentGallery = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { result ->
-        if (result.resultCode == RESULT_OK) {
-            val selectedImg: Uri = result.data?.data as Uri
-            val myFile = uriToFile(selectedImg, this@MainCameraActivity)
-            getFile = myFile
-            binding.previewImage.setImageURI(selectedImg)
-        }
-    }
-
-
 }

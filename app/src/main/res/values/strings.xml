@@ -15,4 +15,19 @@
     <string name="detail">detail</string>
     <string name="image_user">imageUser</string>
     <string name="image_item">imageItem</string>
+
+    <string name="capture_the_spice_image">Capture The Spice Image</string>
+    <string name="spices_image">Spices Image</string>
+    <string name="output">Output:</string>
+    <string name="result_here">Result here</string>
+    <string name="click_on_the_result_text_to_detail">Click on the result text to detail</string>
+    <string name="imagespice">imageSpices</string>
+    <string name="text_spices">Text Spices</string>
+    <string name="title">Kunyit</string>
+    <string name="imagepreview">imagePreview</string>
+    <string name="description">Description</string>
+    <string name="lorem">Lorem ipsum dolor sit amet. In error facilis et beatae consequatur eos eligendi earum sit dolores sunt. Et cupiditate eaque aut dolor ratione qui rerum voluptatem et accusamus dolore. Et totam itaque est distinctio maiores ea omnis libero At explicabo commodi est doloribus similique est similique magni.</string>
+    <string name="label">Label</string>
+    <string name="efficacy">Efficacy</string>
+    <string name="detectspices">detectSpices</string>
 </resources>
