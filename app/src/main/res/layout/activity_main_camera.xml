@@ -35,7 +35,7 @@
         android:backgroundTint="@color/green"
 
         android:text="@string/camera"
-        app:layout_constraintBottom_toTopOf="@+id/uploadButton"
+        app:layout_constraintBottom_toTopOf="@+id/detailButton"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="30dp"
         app:layout_constraintVertical_bias="0.0" />
@@ -52,7 +52,7 @@
         app:layout_constraintTop_toTopOf="@+id/cameraButton" />
 
     <Button
-        android:id="@+id/uploadButton"
+        android:id="@+id/detailButton"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:layout_marginStart="64dp"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">spicedetectobject</string>
+    <string name="app_name">Boemboe</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -14,4 +14,5 @@
     <string name="gallery">gallery</string>
     <string name="detail">detail</string>
     <string name="image_user">imageUser</string>
+    <string name="image_item">imageItem</string>
 </resources>

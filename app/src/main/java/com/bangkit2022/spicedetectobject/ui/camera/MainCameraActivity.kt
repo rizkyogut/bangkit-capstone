@@ -8,14 +8,12 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.bangkit2022.spicedetectobject.databinding.ActivityMainCameraBinding
-import kotlinx.coroutines.runBlocking
 import java.io.File
 
 class MainCameraActivity : AppCompatActivity() {
@@ -30,6 +28,8 @@ class MainCameraActivity : AppCompatActivity() {
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
         private const val REQUEST_CODE_PERMISSIONS = 10
     }
+
+
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -65,10 +65,15 @@ class MainCameraActivity : AppCompatActivity() {
             )
         }
 
+        binding.detailButton.setOnClickListener{
+        startActivity(Intent(this@MainCameraActivity, DetailActivityResult::class.java ))
+        }
+
         binding.cameraButton.setOnClickListener { startTakePhoto() }
         binding.galleryButton.setOnClickListener { startGallery() }
 //        binding.uploadButton.setOnClickListener { uploadImage() }
     }
+
 
 
     private fun startTakePhoto() {

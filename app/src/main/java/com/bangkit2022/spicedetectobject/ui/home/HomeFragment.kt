@@ -5,19 +5,27 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.bangkit2022.spicedetectobject.SpicesAdapter
+import com.bangkit2022.spicedetectobject.api.ItemSpices
 import com.bangkit2022.spicedetectobject.databinding.FragmentHomeBinding
+import com.bangkit2022.spicedetectobject.ui.camera.DetailActivityResult
 import com.bangkit2022.spicedetectobject.ui.camera.MainCameraActivity
 
-class HomeFragment : Fragment(), View.OnClickListener {
+class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private lateinit var bindingHome: FragmentHomeBinding
+    private val viewModel: HomeFragmentViewModel by activityViewModels()
+    private lateinit var usernameFollowers: String
+    private var listSpices = ArrayList<ItemSpices>()
+    private lateinit var spicesAdapter: SpicesAdapter
+//    private var _binding: FragmentHomeBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
-    private val binding get() = _binding!!
+//    private val binding get() = _binding!!
 
     override fun onCreateView(
 
@@ -25,40 +33,56 @@ class HomeFragment : Fragment(), View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
-
-
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-
-        return root
-
-
+        bindingHome = FragmentHomeBinding.inflate(inflater, container, false)
+        return bindingHome.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.fabAddStory.setOnClickListener() {
+        val argument = arguments
+        usernameFollowers = argument?.getString(DetailActivityResult.EXTRA_USERNAME).toString()
+        showRecyclerList()
+
+        viewModel.listSpice.observe(viewLifecycleOwner) { listSpices ->
+            setListSpices(listSpices)
+//            bindingHome.pbSpices.visibility = View.GONE
+        }
+
+        viewModel.isShowLoading.observe(viewLifecycleOwner) {
+            showLoading(it)
+
+
+        }
+        viewModel.setListSpice()
+
+
+        bindingHome.fabAddStory.setOnClickListener() {
             val intent = Intent(requireActivity(), MainCameraActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent)
         }
     }
 
-
-    override fun onClick(p0: View?) {
-        TODO("Not yet implemented")
+    private fun setListSpices(list: ArrayList<ItemSpices>) {
+        bindingHome.rvListSpice.adapter = spicesAdapter
+        spicesAdapter.setList(list)
     }
+
+    private fun showRecyclerList() {
+        spicesAdapter = SpicesAdapter(listSpices)
+        bindingHome.rvListSpice.setHasFixedSize(true)
+        bindingHome.rvListSpice.layoutManager = LinearLayoutManager(activity)
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            bindingHome.pbSpices.visibility = View.VISIBLE
+        } else {
+            bindingHome.pbSpices.visibility = View.GONE
+        }
+    }
+
 }
+
+
+
