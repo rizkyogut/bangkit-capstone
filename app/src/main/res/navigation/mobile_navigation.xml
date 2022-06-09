@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.bangkit2022.spicedetectobject.ui.home.HomeFragment"
+        android:name="com.bangkit2022.boemboe.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_article"
-        android:name="com.bangkit2022.spicedetectobject.ui.article.ArticleFragment"
+        android:name="com.bangkit2022.boemboe.ui.article.ArticleFragment"
         android:label="Article"
         tools:layout="@layout/fragment_article"/>
 </navigation>
