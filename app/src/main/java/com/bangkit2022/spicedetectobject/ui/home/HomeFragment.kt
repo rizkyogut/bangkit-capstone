@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkit2022.spicedetectobject.SpicesAdapter
 import com.bangkit2022.spicedetectobject.api.ItemSpices
 import com.bangkit2022.spicedetectobject.databinding.FragmentHomeBinding
 import com.bangkit2022.spicedetectobject.ui.camera.DetailActivityResult
 import com.bangkit2022.spicedetectobject.ui.camera.MainCameraActivity
+import com.bangkit2022.spicedetectobject.ui.utils.GridItem
 
 class HomeFragment : Fragment() {
 
@@ -21,14 +23,8 @@ class HomeFragment : Fragment() {
     private lateinit var usernameFollowers: String
     private var listSpices = ArrayList<ItemSpices>()
     private lateinit var spicesAdapter: SpicesAdapter
-//    private var _binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-//    private val binding get() = _binding!!
 
     override fun onCreateView(
-
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,7 +48,6 @@ class HomeFragment : Fragment() {
         viewModel.isShowLoading.observe(viewLifecycleOwner) {
             showLoading(it)
 
-
         }
         viewModel.setListSpice()
 
@@ -71,7 +66,8 @@ class HomeFragment : Fragment() {
     private fun showRecyclerList() {
         spicesAdapter = SpicesAdapter(listSpices)
         bindingHome.rvListSpice.setHasFixedSize(true)
-        bindingHome.rvListSpice.layoutManager = LinearLayoutManager(activity)
+        bindingHome.rvListSpice.layoutManager = GridLayoutManager(activity, 2)
+        bindingHome.rvListSpice.addItemDecoration(GridItem(2, 15, true))
     }
 
     private fun showLoading(isLoading: Boolean) {
@@ -81,7 +77,6 @@ class HomeFragment : Fragment() {
             bindingHome.pbSpices.visibility = View.GONE
         }
     }
-
 }
 
 
