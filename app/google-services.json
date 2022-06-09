@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "775512749980",
+    "project_id": "gifted-outrider-351406",
+    "storage_bucket": "gifted-outrider-351406.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775512749980:android:69074f8edd96763619ba59",
+        "android_client_info": {
+          "package_name": "com.bangkit2022.boemboe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "775512749980-ovspd4g4k411286h71vkd06r51q1epln.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bangkit2022.boemboe",
+            "certificate_hash": "2055468c60934e245c8f2d7be31dcc22eff2e11a"
+          }
+        },
+        {
+          "client_id": "775512749980-atekmq0clhkrgfabfi5c91oub3nghdln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgAW3bvGxV-wsLOvawPqftFL1RgY47E4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "775512749980-atekmq0clhkrgfabfi5c91oub3nghdln.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

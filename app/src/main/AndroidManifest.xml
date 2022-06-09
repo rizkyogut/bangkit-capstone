@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bangkit2022.spicedetectobject">
+    package="com.bangkit2022.boemboe">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -28,13 +28,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Spicedetectobject"
+        android:theme="@style/Theme.Boemboe"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ui.auth.SignUpActivity"
+            android:name="com.bangkit2022.boemboe.ui.auth.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.auth.SignInActivity"
+            android:name="com.bangkit2022.boemboe.ui.auth.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,19 +43,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.camera.DetailActivityResult"
+            android:name="com.bangkit2022.boemboe.ui.camera.DetailActivityResult"
             android:exported="false" />
         <activity
-            android:name=".ui.camera.MainCameraActivity"
+            android:name="com.bangkit2022.boemboe.ui.camera.MainCameraActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false"
-            android:label="@string/app_name"></activity>
-
+            android:name="com.bangkit2022.boemboe.MainActivity"
+            android:exported="false" />
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.bangkit2022.spicedetectobject"
+            android:authorities="com.bangkit2022.boemboe"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

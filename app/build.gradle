@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
 
 }
 
@@ -9,7 +10,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.bangkit2022.spicedetectobject"
+        applicationId "com.bangkit2022.boemboe"
         minSdk 25
         targetSdk 32
         versionCode 1
@@ -38,16 +39,16 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    implementation 'com.github.bumptech.glide:glide:4.13.1'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
-    implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.6"
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
 
-    implementation "androidx.camera:camera-camera2:1.2.0-alpha01"
-    implementation "androidx.camera:camera-lifecycle:1.2.0-alpha01"
-    implementation "androidx.camera:camera-view:1.2.0-alpha01"
+    implementation "androidx.camera:camera-camera2:1.2.0-alpha02"
+    implementation "androidx.camera:camera-lifecycle:1.2.0-alpha02"
+    implementation "androidx.camera:camera-view:1.2.0-alpha02"
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
