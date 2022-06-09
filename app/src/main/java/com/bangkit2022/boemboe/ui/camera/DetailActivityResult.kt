@@ -25,7 +25,6 @@ class DetailActivityResult : AppCompatActivity() {
             .load(spice.photoUrl)
             .into(binding.imgDetailPhoto)
         binding.tvDetailDescription.text = spice.description
-        binding.tvDetailCooking.text =  spice.cooking.toString()
         showRecyclerList(spice.cooking, binding.rvListCooking)
         showRecyclerList(spice.benefit, binding.rvListBenefit)
 

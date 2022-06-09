@@ -44,4 +44,6 @@
     <string name="retype_your_password">Retype Your Password</string>
     <string name="sign_in">Sign In</string>
     <string name="not_registered_yet_sign_up">Not Registered Yet , Sign Up !</string>
+    <string name="cooking">Cooking</string>
+    <string name="benefit">Benefit</string>
 </resources>
