@@ -27,13 +27,13 @@ class SpicesAdapter(private val listSpices: ArrayList<ItemSpices>) : RecyclerVie
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val spice = listSpices[position]
 
-        viewHolder.binding.tvItemName.text = spice.name
-        viewHolder.binding.tvItemDescription.text = spice.description
+        viewHolder.binding.tvSpices.text = spice.name
+//        viewHolder.binding.tvItemDescription.text = spice.description
 
 
         Glide.with(viewHolder.itemView.context)
             .load(spice.photoUrl)
-            .into(viewHolder.binding.imgItemPhoto)
+            .into(viewHolder.binding.ivPhoto)
 
         viewHolder.itemView.setOnClickListener {
             val moveWithObjectIntent =
