@@ -22,6 +22,7 @@ class ArticleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val myWebView: WebView = view.findViewById(R.id.webView)
         myWebView.webViewClient = object : WebViewClient() {
+            @Deprecated("Deprecated in Java")
             override fun shouldOverrideUrlLoading(
                 view: WebView,
                 url: String
@@ -38,7 +39,4 @@ class ArticleFragment : Fragment() {
         myWebView.settings.useWideViewPort = true
 
     }
-
-
-
 }

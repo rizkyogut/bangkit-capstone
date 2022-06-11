@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="@string/sing_in_to_continue"
+        android:text="@string/sign_in_to_continue"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/emailLayout"
         app:layout_constraintStart_toStartOf="@+id/emailLayout" />

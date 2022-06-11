@@ -31,11 +31,8 @@
         android:theme="@style/Theme.Boemboe"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="com.bangkit2022.boemboe.ui.auth.SignUpActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.bangkit2022.boemboe.ui.auth.SignInActivity"
-            android:exported="true">
+            android:name=".SplashScreenActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,14 +40,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.bangkit2022.boemboe.ui.camera.DetailActivityResult"
+            android:name=".ui.auth.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name="com.bangkit2022.boemboe.ui.camera.MainCameraActivity"
+            android:name=".ui.auth.SignInActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ui.camera.DetailActivityResult"
             android:exported="false" />
         <activity
-            android:name="com.bangkit2022.boemboe.MainActivity"
+            android:name=".ui.camera.MainCameraActivity"
             android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.bangkit2022.boemboe"
