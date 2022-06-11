@@ -12,4 +12,14 @@
         android:icon="@drawable/ic_article_white"
         android:title="@string/article" />
 
+    <item
+        android:id="@+id/navigation_market"
+        android:icon="@drawable/ic_baseline_shopping_cart_24"
+        android:title="@string/title_market" />
+
+    <item
+        android:id="@+id/navigation_about"
+        android:icon="@drawable/ic_baseline_about_24"
+        android:title="@string/title_about" />
+
 </menu>

@@ -11,12 +11,6 @@ import com.bangkit2022.boemboe.R
 
 class ArticleFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = ArticleFragment()
-    }
-
-    private lateinit var viewModel: ArticleViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -45,10 +39,6 @@ class ArticleFragment : Fragment() {
 
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ArticleViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+
 
 }
