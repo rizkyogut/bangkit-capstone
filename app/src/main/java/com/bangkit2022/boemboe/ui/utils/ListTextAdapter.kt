@@ -1,4 +1,4 @@
-package com.bangkit2022.boemboe
+package com.bangkit2022.boemboe.ui.utils
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,12 +9,12 @@ import com.bangkit2022.boemboe.databinding.ItemListBinding
 class ListTextAdapter(private val listText: ArrayList<String>) : RecyclerView.Adapter<ListTextAdapter.ViewHolder>() {
     class ViewHolder(var binding: ItemListBinding) : RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListTextAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ListTextAdapter.ViewHolder(binding)
+        return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ListTextAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val text = listText[position]
 
         holder.binding.tvTextItem.text = "- %s".format(text)

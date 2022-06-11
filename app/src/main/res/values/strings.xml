@@ -54,10 +54,17 @@
     <string name="title_market">Market</string>
     <string name="title_about">About</string>
     <string name="about_us">About Us</string>
-    <string name="profile1">- Ahmad Rizky M2001G0003 (Machine Learning) - Institut Pertanian Bogor</string>
-    <string name="profile2">- Maylida Izattul Wardah M2204G1901 (Machine Learning) - Universitas Esa Unggul</string>
-    <string name="profile3">- Muhammad Rizky Maulana A2211G1944 (Mobile Development) - University Indrapsrasta</string>
-    <string name="profile4">- Muhammad Shiratul Haq A2009F0989 (Mobile Development) - Gunadarma University</string>
-    <string name="profile5">- Hanna Marchela Stephanie Tampubolon C2005G0427 (Cloud Computing) - Universitas Bina Nusantara</string>
-    <string name="profile6">- Yuaris Arham C7128F1568 (Cloud Computing) - Politeknik Negeri Jakarta</string>
+    <string name="boemboe_team">Team</string>
+    <string name="profile1">Ahmad Rizky - M2001G0003 - Institut Pertanian Bogor</string>
+    <string name="profile2">Maylida Izattul Wardah - M2204G1901 - Universitas Esa Unggul</string>
+    <string name="profile3">Muhammad Rizky Maulana - A2211G1944 - University Indrapsrasta</string>
+    <string name="profile4">Muhammad Shiratul Haq - A2009F0989 - Gunadarma University</string>
+    <string name="profile5">Hanna Marchela Stephanie Tampubolon - C2005G0427 - Universitas Bina Nusantara</string>
+    <string name="profile6">Yuaris Arham - C7128F1568 - Politeknik Negeri Jakarta</string>
+    <string name="under_construction_images">Under Construction Images</string>
+    <string name="machine_learning">Machine Learning</string>
+    <string name="mobile_development">Mobile Development</string>
+    <string name="about">About</string>
+    <string name="boemboe_desc">Boemboe is application for helping people who want to know the types of Indonesian spices and their benefits in an easy way.</string>
+    <string name="boemboe_desc2">Hopefully, this application will educate people who want to learn about spices in Indonesia.</string>
 </resources>

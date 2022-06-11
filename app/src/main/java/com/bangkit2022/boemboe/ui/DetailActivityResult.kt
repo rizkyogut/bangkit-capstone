@@ -1,14 +1,13 @@
-package com.bangkit2022.boemboe.ui.camera
+package com.bangkit2022.boemboe.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bangkit2022.boemboe.ListTextAdapter
 import com.bangkit2022.boemboe.api.ItemSpices
 import com.bangkit2022.boemboe.databinding.ActivityDetailResultBinding
+import com.bangkit2022.boemboe.ui.utils.ListTextAdapter
 import com.bumptech.glide.Glide
-
 
 class DetailActivityResult : AppCompatActivity() {
 
@@ -30,16 +29,16 @@ class DetailActivityResult : AppCompatActivity() {
 
     }
 
-    private fun showRecyclerList(list : ArrayList<String>, recyclerView:RecyclerView) {
+    private fun showRecyclerList(list: ArrayList<String>, recyclerView: RecyclerView) {
         val textAdapter = ListTextAdapter(list)
-       recyclerView.setHasFixedSize(true)
-      recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = textAdapter
     }
 
     companion object {
         const val EXTRA_STORY = "extra_story"
-            const val EXTRA_USERNAME = "extra_username"
+        const val EXTRA_USERNAME = "extra_username"
     }
 
 }

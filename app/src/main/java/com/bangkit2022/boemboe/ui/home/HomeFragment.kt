@@ -8,10 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import com.bangkit2022.boemboe.SpicesAdapter
+import com.bangkit2022.boemboe.ui.utils.SpicesAdapter
 import com.bangkit2022.boemboe.api.ItemSpices
 import com.bangkit2022.boemboe.databinding.FragmentHomeBinding
-import com.bangkit2022.boemboe.ui.camera.DetailActivityResult
+import com.bangkit2022.boemboe.ui.DetailActivityResult
 import com.bangkit2022.boemboe.ui.camera.MainCameraActivity
 import com.bangkit2022.boemboe.ui.utils.GridItem
 

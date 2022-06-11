@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import com.bangkit2022.boemboe.MainActivity
+import com.bangkit2022.boemboe.ui.MainActivity
 import com.bangkit2022.boemboe.R
 import com.bangkit2022.boemboe.databinding.ActivitySignInBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn

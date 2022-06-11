@@ -47,13 +47,13 @@
             android:exported="false">
         </activity>
         <activity
-            android:name=".ui.camera.DetailActivityResult"
+            android:name=".ui.DetailActivityResult"
             android:exported="false" />
         <activity
             android:name=".ui.camera.MainCameraActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="false" />
 
         <provider

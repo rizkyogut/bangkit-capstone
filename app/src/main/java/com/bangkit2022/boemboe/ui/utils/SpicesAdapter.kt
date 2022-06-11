@@ -1,4 +1,4 @@
-package com.bangkit2022.boemboe
+package com.bangkit2022.boemboe.ui.utils
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit2022.boemboe.api.ItemSpices
 import com.bangkit2022.boemboe.databinding.ItemSpiceBinding
-import com.bangkit2022.boemboe.ui.camera.DetailActivityResult
+import com.bangkit2022.boemboe.ui.DetailActivityResult
 import com.bumptech.glide.Glide
 
 class SpicesAdapter(private val listSpices: ArrayList<ItemSpices>) : RecyclerView.Adapter<SpicesAdapter.ViewHolder>() {

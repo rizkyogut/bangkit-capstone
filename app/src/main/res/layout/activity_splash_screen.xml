@@ -8,13 +8,13 @@
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:contentDescription="@string/image_splashscreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/signup_screen" />
+        app:srcCompat="@drawable/boemboe_images" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

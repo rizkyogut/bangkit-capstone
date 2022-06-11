@@ -1,4 +1,4 @@
-package com.bangkit2022.boemboe
+package com.bangkit2022.boemboe.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.bangkit2022.boemboe.R
 import com.bangkit2022.boemboe.databinding.ActivityMainBinding
 import com.bangkit2022.boemboe.ui.auth.SignInActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -39,7 +40,10 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
 
         val appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.navigation_home,  R.id.navigation_article, R.id.navigation_market, R.id.navigation_about))
+            R.id.navigation_home,
+            R.id.navigation_article,
+            R.id.navigation_market,
+            R.id.navigation_about))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
