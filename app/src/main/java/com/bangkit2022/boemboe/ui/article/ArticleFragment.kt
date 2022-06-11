@@ -11,12 +11,6 @@ import com.bangkit2022.boemboe.R
 
 class ArticleFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = ArticleFragment()
-    }
-
-    private lateinit var viewModel: ArticleViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -28,6 +22,7 @@ class ArticleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val myWebView: WebView = view.findViewById(R.id.webView)
         myWebView.webViewClient = object : WebViewClient() {
+            @Deprecated("Deprecated in Java")
             override fun shouldOverrideUrlLoading(
                 view: WebView,
                 url: String
@@ -44,11 +39,4 @@ class ArticleFragment : Fragment() {
         myWebView.settings.useWideViewPort = true
 
     }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ArticleViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
 }

@@ -34,8 +34,8 @@
     <string name="emailValidation_alert">Invalid Email, Must using @mail</string>
     <string name="passwordValidation_alert">Password less than 6 character</string>
     <string name="boemboe">Boemboe</string>
-    <string name="sing_up_to_continue">Sing Up To Continue</string>
-    <string name="sing_in_to_continue">Sing In To Continue</string>
+    <string name="sign_up_to_continue">Sing Up To Continue</string>
+    <string name="sign_in_to_continue">Sing In To Continue</string>
     <string name="welcome_to">Welcome To,</string>
     <string name="already_registered_sign_in">Already Registered , Sign In !</string>
     <string name="sign_up">Sign Up</string>
@@ -46,4 +46,7 @@
     <string name="not_registered_yet_sign_up">Not Registered Yet , Sign Up !</string>
     <string name="cooking">Cooking</string>
     <string name="benefit">Benefit</string>
+    <string name="image_splashscreen">Image SplashScreen</string>
+    <string name="detect_spices">Detect Spices</string>
+    <string name="logout">Logout</string>
 </resources>
