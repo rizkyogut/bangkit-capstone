@@ -47,7 +47,7 @@
             android:exported="false">
         </activity>
         <activity
-            android:name=".ui.DetailActivityResult"
+            android:name=".ui.detail.DetailActivityResult"
             android:exported="false" />
         <activity
             android:name=".ui.camera.MainCameraActivity"

@@ -15,7 +15,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        android:src="@drawable/ic_image"/>
+        android:src="@drawable/ic_image"
+        android:contentDescription="@string/images_previews" />
 
     <Button
         android:id="@+id/btn_capture_image"
@@ -43,33 +44,23 @@
         android:id="@+id/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="@string/output"
         android:textColor="@android:color/black"
         android:textSize="21sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_load_image" />
+        app:layout_constraintEnd_toEndOf="@+id/btn_capture_image"
+        app:layout_constraintTop_toBottomOf="@+id/btn_capture_image" />
 
     <TextView
         android:id="@+id/tv_output"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:text="@string/result_here"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="21sp"
         app:layout_constraintStart_toEndOf="@+id/textview"
         app:layout_constraintTop_toTopOf="@+id/textview" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/click_on_the_result_text_to_detail"
-        android:textSize="13sp"
-        app:layout_constraintStart_toStartOf="@+id/textview"
-        app:layout_constraintTop_toBottomOf="@id/textview" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"

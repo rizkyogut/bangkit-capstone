@@ -34,8 +34,8 @@
     <string name="emailValidation_alert">Invalid Email, Must using @mail</string>
     <string name="passwordValidation_alert">Password less than 6 character</string>
     <string name="boemboe">Boemboe</string>
-    <string name="sign_up_to_continue">Sing Up To Continue</string>
-    <string name="sign_in_to_continue">Sing In To Continue</string>
+    <string name="sign_up_to_continue">Sign Up To Continue</string>
+    <string name="sign_in_to_continue">Sign In To Continue</string>
     <string name="welcome_to">Welcome To,</string>
     <string name="already_registered_sign_in">Already Registered , Sign In !</string>
     <string name="sign_up">Sign Up</string>
@@ -57,8 +57,8 @@
     <string name="boemboe_team">Team</string>
     <string name="profile1">Ahmad Rizky - M2001G0003 - Institut Pertanian Bogor</string>
     <string name="profile2">Maylida Izattul Wardah - M2204G1901 - Universitas Esa Unggul</string>
-    <string name="profile3">Muhammad Rizky Maulana - A2211G1944 - University Indrapsrasta</string>
-    <string name="profile4">Muhammad Shiratul Haq - A2009F0989 - Gunadarma University</string>
+    <string name="profile3">Muhammad Rizky Maulana - A2211G1944 - Universitas Indrapsrasta</string>
+    <string name="profile4">Muhammad Shiratul Haq - A2009F0989 - Universitas Gunadarma</string>
     <string name="profile5">Hanna Marchela Stephanie Tampubolon - C2005G0427 - Universitas Bina Nusantara</string>
     <string name="profile6">Yuaris Arham - C7128F1568 - Politeknik Negeri Jakarta</string>
     <string name="under_construction_images">Under Construction Images</string>
@@ -67,4 +67,5 @@
     <string name="about">About</string>
     <string name="boemboe_desc">Boemboe is application for helping people who want to know the types of Indonesian spices and their benefits in an easy way.</string>
     <string name="boemboe_desc2">Hopefully, this application will educate people who want to learn about spices in Indonesia.</string>
+    <string name="images_previews">Images Previews</string>
 </resources>

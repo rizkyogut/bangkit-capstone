@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.bangkit2022.boemboe.ui.utils.SpicesAdapter
 import com.bangkit2022.boemboe.api.ItemSpices
 import com.bangkit2022.boemboe.databinding.FragmentHomeBinding
-import com.bangkit2022.boemboe.ui.DetailActivityResult
+import com.bangkit2022.boemboe.ui.detail.DetailActivityResult
 import com.bangkit2022.boemboe.ui.camera.MainCameraActivity
 import com.bangkit2022.boemboe.ui.utils.GridItem
 
@@ -32,7 +32,6 @@ class HomeFragment : Fragment() {
         return bindingHome.root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val argument = arguments
@@ -41,15 +40,13 @@ class HomeFragment : Fragment() {
 
         viewModel.listSpice.observe(viewLifecycleOwner) { listSpices ->
             setListSpices(listSpices)
-//            bindingHome.pbSpices.visibility = View.GONE
         }
 
         viewModel.isShowLoading.observe(viewLifecycleOwner) {
             showLoading(it)
-
         }
-        viewModel.setListSpice()
 
+        viewModel.setListSpice()
 
         bindingHome.fabAddStory.setOnClickListener() {
             val intent = Intent(requireActivity(), MainCameraActivity::class.java)

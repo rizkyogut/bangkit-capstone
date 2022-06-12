@@ -47,8 +47,6 @@ class HomeFragmentViewModel : ViewModel() {
 
     }
 
-
-
     companion object {
         private const val TAG = "HomeFragmentViewModel"
     }

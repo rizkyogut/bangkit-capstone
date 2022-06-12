@@ -20,6 +20,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import com.bangkit2022.boemboe.databinding.ActivityMainCameraBinding
 import com.bangkit2022.boemboe.ml.SpicesV1
+import com.bangkit2022.boemboe.ui.detail.DetailActivityResult
 import org.tensorflow.lite.support.image.TensorImage
 
 class MainCameraActivity : AppCompatActivity(), View.OnClickListener {
@@ -46,7 +47,6 @@ class MainCameraActivity : AppCompatActivity(), View.OnClickListener {
         with(binding) {
             btnCaptureImage.setOnClickListener(this@MainCameraActivity)
             btnLoadImage.setOnClickListener(this@MainCameraActivity)
-            tvOutput.setOnClickListener(this@MainCameraActivity)
         }
     }
 
@@ -54,7 +54,6 @@ class MainCameraActivity : AppCompatActivity(), View.OnClickListener {
         when (v) {
             binding.btnCaptureImage -> startCamera()
             binding.btnLoadImage -> startGallery()
-            binding.tvOutput -> startResultML()
         }
     }
 
@@ -141,11 +140,5 @@ class MainCameraActivity : AppCompatActivity(), View.OnClickListener {
         //setting ouput text
         binding.tvOutput.text = highProbabilityOutput.label
         Log.i("TAG", "outputGenerator: $highProbabilityOutput")
-    }
-
-    private fun startResultML() {
-        val intent = Intent(Intent.ACTION_VIEW,
-            Uri.parse("https://www.google.com/search?q=Rekomendasi+Makanan+Menggunakan+Bumbu+${binding.tvOutput.text}"))
-        startActivity(intent)
     }
 }

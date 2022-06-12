@@ -1,4 +1,4 @@
-package com.bangkit2022.boemboe.ui
+package com.bangkit2022.boemboe.ui.detail
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -26,7 +26,6 @@ class DetailActivityResult : AppCompatActivity() {
         binding.tvDetailDescription.text = spice.description
         showRecyclerList(spice.cooking, binding.rvListCooking)
         showRecyclerList(spice.benefit, binding.rvListBenefit)
-
     }
 
     private fun showRecyclerList(list: ArrayList<String>, recyclerView: RecyclerView) {
