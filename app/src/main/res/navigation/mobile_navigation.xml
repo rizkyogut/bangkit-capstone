@@ -7,19 +7,26 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.bangkit2022.spicedetectobject.ui.home.HomeFragment"
+        android:name="com.bangkit2022.boemboe.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_camera"
-        android:name="com.bangkit2022.spicedetectobject.ui.camera.CameraFragment"
-        android:label="@string/camera"
-        tools:layout="@layout/fragment_camera"/>
+        android:id="@+id/navigation_article"
+        android:name="com.bangkit2022.boemboe.ui.article.ArticleFragment"
+        android:label="@string/title_article"
+        tools:layout="@layout/fragment_article"/>
 
     <fragment
-        android:id="@+id/navigation_article"
-        android:name="com.bangkit2022.spicedetectobject.ui.article.ArticleFragment"
-        android:label="Article"
-        tools:layout="@layout/fragment_article"/>
+        android:id="@+id/navigation_market"
+        android:name="com.bangkit2022.boemboe.ui.market.MarketFragment"
+        android:label="@string/title_market"
+        tools:layout="@layout/fragment_market"/>
+
+    <fragment
+        android:id="@+id/navigation_about"
+        android:name="com.bangkit2022.boemboe.ui.about.AboutFragment"
+        android:label="@string/title_about"
+        tools:layout="@layout/fragment_about"/>
+
 </navigation>

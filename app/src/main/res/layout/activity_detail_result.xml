@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.detail.DetailActivityResult">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_detail_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/image_user"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tvDetailName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="top"
+            android:text="@string/title"
+            android:textStyle="bold"
+            android:textSize="32sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_detail_photo" />
+
+        <TextView
+            android:id="@+id/tvTitleDescription"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:text="@string/description"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvDetailName"
+            app:layout_constraintStart_toStartOf="@+id/tvDetailName"
+            app:layout_constraintTop_toBottomOf="@+id/tvDetailName" />
+
+        <TextView
+            android:id="@+id/tvDetailDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:gravity="top"
+            android:lineSpacingExtra="0sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvTitleDescription"
+            app:layout_constraintStart_toStartOf="@+id/tvTitleDescription"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleDescription"
+            tools:text="description" />
+
+        <TextView
+            android:id="@+id/tvTitleCooking"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:text="@string/cooking"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvDetailDescription"
+            app:layout_constraintStart_toStartOf="@+id/tvDetailDescription"
+            app:layout_constraintTop_toBottomOf="@+id/rvListBenefit" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListCooking"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/tvDetailDescription"
+            app:layout_constraintStart_toStartOf="@+id/tvDetailDescription"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleCooking" />
+
+        <TextView
+            android:id="@+id/tvTitleBenefit"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:text="@string/benefit"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/rvListCooking"
+            app:layout_constraintStart_toStartOf="@+id/rvListCooking"
+            app:layout_constraintTop_toBottomOf="@+id/tvDetailDescription" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListBenefit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/rvListCooking"
+            app:layout_constraintStart_toStartOf="@+id/rvListCooking"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleBenefit" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

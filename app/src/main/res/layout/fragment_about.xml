@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.about.AboutFragment">
+
+    <ImageView
+        android:id="@+id/imageInfo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/ic_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/about"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageInfo"
+        app:layout_constraintTop_toTopOf="@+id/imageInfo" />
+
+    <TextView
+        android:id="@+id/text_about"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/boemboe_desc"
+        android:textSize="15sp"
+        android:textStyle="normal|italic"
+        app:layout_constraintEnd_toEndOf="@+id/text_info"
+        app:layout_constraintStart_toStartOf="@+id/imageInfo"
+        app:layout_constraintTop_toBottomOf="@+id/text_info" />
+
+    <TextView
+        android:id="@+id/text_about2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/boemboe_desc2"
+        android:textSize="15sp"
+        android:textStyle="normal|italic"
+        app:layout_constraintEnd_toEndOf="@+id/text_info"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageInfo"
+        app:layout_constraintTop_toBottomOf="@+id/text_about" />
+
+    <ImageView
+        android:id="@+id/imagePerson"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/ic_person_green"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_about2" />
+
+    <TextView
+        android:id="@+id/text_boemboeTeam"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/boemboe_team"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imagePerson"
+        app:layout_constraintTop_toTopOf="@+id/imagePerson" />
+
+
+    <TextView
+        android:id="@+id/text_mlPath"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/machine_learning"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/imagePerson"
+        app:layout_constraintTop_toBottomOf="@+id/imagePerson" />
+
+    <TextView
+        android:id="@+id/text_rizky"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
+        android:text="@string/profile1"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/text_mlPath"
+        app:layout_constraintTop_toBottomOf="@+id/text_mlPath" />
+
+    <TextView
+        android:id="@+id/text_may"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
+        android:text="@string/profile2"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/text_rizky"
+        app:layout_constraintTop_toBottomOf="@+id/text_rizky" />
+
+    <TextView
+        android:id="@+id/text_mdPath"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/mobile_development"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/imagePerson"
+        app:layout_constraintTop_toBottomOf="@+id/text_may" />
+
+    <TextView
+        android:id="@+id/text_rizkym"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/profile3"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_mdPath"
+        app:layout_constraintTop_toBottomOf="@+id/text_mdPath" />
+
+    <TextView
+        android:id="@+id/text_profile4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/profile4"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_rizkym"
+        app:layout_constraintTop_toBottomOf="@+id/text_rizkym" />
+
+    <TextView
+        android:id="@+id/text_ccPath"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/mobile_development"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/text_profile4"
+        app:layout_constraintTop_toBottomOf="@+id/text_profile4" />
+
+    <TextView
+        android:id="@+id/text_profile5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/profile5"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_profile6"
+        app:layout_constraintTop_toBottomOf="@+id/text_profile6" />
+
+    <TextView
+        android:id="@+id/text_profile6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/profile6"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_ccPath"
+        app:layout_constraintTop_toBottomOf="@+id/text_ccPath" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
