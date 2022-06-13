@@ -24,7 +24,7 @@ API used in this research available [here]( https://github.com/LoneSheep/capston
   </p>
 </div>
 
-## Built With Love By B22-PS069:
+## Built With Love By C22-PS069:
 
 ### Machine Learning
 * Ahmad Rizky - M2001G0003 [Linkedin](https://www.linkedin.com/in/ahmdxrzky/) | [Github](https://github.com/ahmdxrzky)
