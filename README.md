@@ -2,6 +2,8 @@
 
 ### Team ID : C22-PS069
 
+*Note: to try this application replace the model file in the ml folder by downloading the model file on this gdrive [here](https://drive.google.com/file/d/1-BiDa8ioQTW489EEME6zxkRHugZwiJ7d/view) <br>
+
 ## Project Description
 This repository contains source codes and files for our team application. <br>
 This application aims to identify spices from its images. <br>
@@ -32,6 +34,6 @@ API used in this research available [here]( https://github.com/LoneSheep/capston
 * Muhammad Rizky Maulana - A2211G1944 [Linkedin](https://www.linkedin.com/in/muhammad-rizky-maulana-198762170/) | [Github](https://github.com/rizkyogut)
 * Muhammad Shiratul Haq - A2009F0989 [Linkedin](https://www.linkedin.com/in/muhammad-shiratul-haq/) | [Github](https://github.com/sirat06)
 
-### Cloud Coomputing
+### Cloud Computing
 * Yuaris Arham - C7128F1568 [Linkedin](https://www.linkedin.com/in/yuaris-arham-338b10231/) | [Github](https://github.com/LoneSheep)
 * Hanna Marchela Stephanie Tampubolon - C2005G0427 [Linkedin](https://www.linkedin.com/in/hannamarchela/) | [Github](https://github.com/HannaMarchela)
